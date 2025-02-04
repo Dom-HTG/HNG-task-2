@@ -18,7 +18,7 @@ export const classifyNumber = async (req, res) => {
         const fun_fact = await funFact(num);
 
         res.status(200).json({
-            number: num,
+            number: isNaN(num) ? String(num) : num,
             is_prime: is_prime === true ? true : false,
             is_perfect,
             properties: is_armstrong === false ? [parity] : ["armstrong", parity],
@@ -37,7 +37,7 @@ export const classifyNumber = async (req, res) => {
 
         } else {
             res.status(400).json({
-                number: num,
+                number: num === null || undefined ? "" : num,
                 error: true
             });
         };

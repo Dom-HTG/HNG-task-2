@@ -36,6 +36,8 @@ export const checkParity = (num) => {
 };
 
 export const digitSum = (num) => {
+    // check if number is negative
+    if (num < 0) return 
     const stringNumber = num.toString().split('').map(Number);
     let sum = 0;
 
@@ -50,6 +52,9 @@ export const isPrime = (num) => {
     if (num < 2) return false; 
     if (num === 2) return true; 
     if (num % 2 === 0) return false; // even numbers are not prime
+
+    if (num < 0) return false; // negative numbers
+    if (!Number.isInteger(num)) return false; // non integers
 
     for (let i = 3; i <= Math.sqrt(num); i += 2) {
         if (num % i === 0) return false; // If divisible, it's not prime
