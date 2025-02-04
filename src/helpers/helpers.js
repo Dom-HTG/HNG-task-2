@@ -11,7 +11,6 @@ export const funFact = async (num) => {
         return fact;
     } catch (e) {
         console.error(e);
-        process.exit(1);
     };
 };
 

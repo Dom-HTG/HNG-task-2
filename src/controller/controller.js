@@ -1,10 +1,7 @@
 import { digitSum, funFact, isArmstrongNumber, isPerfect, isPrime, checkParity } from "../helpers/helpers.js";
 
 export const classifyNumber = async (req, res) => {
-    console.log(typeof req.query.number);
-
     try {
-        
         const num = parseInt(req.query.number);
         
         // validate input.
@@ -29,11 +26,20 @@ export const classifyNumber = async (req, res) => {
         });
 
     } catch (e) {
-        console.error(e);
-        res.status(400).json({
-            number: "alphabet",
-            error: true
-        });
+        console.log(e);
+
+        if (e.message === "Failed to fetch fact") {
+            res.status(500).json({
+                message: "Internal Server Error",
+                error: true
+            });
+            
+        } else {
+            res.status(400).json({
+                number: "alphabet",
+                error: true
+            });
+        };
     };
 };
 
