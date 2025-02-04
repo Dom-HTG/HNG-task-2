@@ -20,7 +20,7 @@ export const classifyNumber = async (req, res) => {
             number: num,
             is_prime,
             is_perfect,
-            properties: is_armstrong === false ? [parity] : ["Armstrong", parity],
+            properties: is_armstrong === false ? [parity] : ["armstrong", parity],
             digit_sum,
             fun_fact
         });
@@ -33,7 +33,7 @@ export const classifyNumber = async (req, res) => {
                 message: "Internal Server Error",
                 error: true
             });
-            
+
         } else {
             res.status(400).json({
                 number: "alphabet",

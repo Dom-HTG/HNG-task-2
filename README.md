@@ -6,7 +6,7 @@ A simple RESTful API that provides interesting mathematical properties about a g
 
 ---
 
-## ## **Setup & Installation**
+## **Setup & Installation**
 
 ### **Prerequisites**
 - Node.js (v12 or later)
