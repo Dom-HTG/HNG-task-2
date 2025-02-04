@@ -8,23 +8,27 @@ A simple RESTful API that provides interesting mathematical properties about a g
 
 ## ## **Setup & Installation**
 
+### **Prerequisites**
+- Node.js (v12 or later)
+- npm or yarn
+
 ### **1. Clone the Repository**
 ```sh
 git clone https://github.com/Dom-HTG/HNG-task-2.git
 ```
-### **2. Install dependencies
+### **2. Install dependencies**
 ```sh
 npm install
 ```
 
-### **3. Start application
+### **3. Start application**
 ```sh
 npm run start:prod
 ```
 
 
 ## **API Endpoint**
-### `GET /api/number-facts?num=<number>`
+### `GET https://task-2-ft7i.onrender.com/api/classify-number?number=371`
 
 ---
 
@@ -62,8 +66,9 @@ npm run start:prod
     "error": true
 }
 ```
+
 ## **Usage**
 - Make requests to the API using cURL tool
 ```sh
-curl -X GET "http://localhost:5000/api/classify-number?number=371"
+curl -X GET "https://task-2-ft7i.onrender.com/api/classify-number?number=371"
 ```
