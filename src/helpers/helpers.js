@@ -15,12 +15,13 @@ export const funFact = async (num) => {
 };
 
 export const isArmstrongNumber = (num) => {
-    const stringNumber = Math.abs(num).toString().split('').map(Number);
+    const abs = Math.abs(num);
+    const stringNumber = abs.toString().split('').map(Number);
     const power = stringNumber.length;
     let sum = 0;
 
     stringNumber.forEach(number => sum += Math.pow(number, power));
-    if (num === sum) {
+    if (abs === sum) {
         return true;
     } else {
         return false;
@@ -37,7 +38,6 @@ export const checkParity = (num) => {
 
 export const digitSum = (num) => {
     // check if number is negative
-    if (num < 0) return 
     const stringNumber = Math.abs(num).toString().split('').map(Number);
     let sum = 0;
 
