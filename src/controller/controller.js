@@ -1,8 +1,9 @@
 import { digitSum, funFact, isArmstrongNumber, isPerfect, isPrime, checkParity } from "../helpers/helpers.js";
 
 export const classifyNumber = async (req, res) => {
+    let num;
     try {
-        const num = parseInt(req.query.number);
+        num = parseInt(req.query.number);
         
         // validate input.
         if (isNaN(num)) throw new Error("Invalid input. Please provide a number.");
@@ -18,7 +19,7 @@ export const classifyNumber = async (req, res) => {
 
         res.status(200).json({
             number: num,
-            is_prime,
+            is_prime: is_prime === true ? true : false,
             is_perfect,
             properties: is_armstrong === false ? [parity] : ["armstrong", parity],
             digit_sum,
@@ -36,7 +37,7 @@ export const classifyNumber = async (req, res) => {
 
         } else {
             res.status(400).json({
-                number: "alphabet",
+                number: num,
                 error: true
             });
         };
